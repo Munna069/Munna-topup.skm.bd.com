@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ডায়মন্ড রেট</title>
+  <style>
+    body { font-family: sans-serif; padding: 10px; background: #f9f9f9; }
+    h2, h3 { color: #333; }
+    ul { list-style: none; padding: 0; }
+    li { background: #fff; margin: 5px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; cursor: pointer; }
+    li:hover { background: #e0f7fa; }
+    .form-section { background: #fff; padding: 10px; border-radius: 5px; margin-top: 20px; }
+    input, select, button { width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; }
+    a { display: block; margin-top: 10px; color: #007bff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h2>বিকাশ/নগদ: 01712506679</h2>
+  <h2>আগে পেমেন্ট করুন তারপর অর্ডার কনফার্ম করুন</h2>
+  <h3>🔥 ডায়মন্ড রেট</h3>  
+  <ul>
+    <li onclick="selectRate(this, 'Level Up Pass - 163 TK')">🎟️ Level Up Pass - 163 TK</li>
+    <li onclick="selectRate(this, 'Weekly - 160 TK')">📅 Weekly - 160 TK</li>
+    <li onclick="selectRate(this, '25 Diamond - 25 TK')">💎 25 Diamond - 25 TK</li>
+    <li onclick="selectRate(this, '50 Diamond - 45 TK')">💎 50 Diamond - 45 TK</li>
+    <li onclick="selectRate(this, '115 Diamond - 82 TK')">💎 115 Diamond - 82 TK</li>
+    <li onclick="selectRate(this, '240 Diamond - 165 TK')">💎 240 Diamond - 165 TK</li>
+    <li onclick="selectRate(this, '355 Diamond - 241 TK')">💎 355 Diamond - 241 TK</li>
+    <li onclick="selectRate(this, '480 Diamond - 320 TK')">💎 480 Diamond - 320 TK</li>
+    <li onclick="selectRate(this, '850 Diamond - 565 TK')">💎 850 Diamond - 565 TK</li>
+    <li onclick="selectRate(this, '1240 Diamond - 825 TK')">💎 1240 Diamond - 825 TK</li>
+    <li onclick="selectRate(this, 'Monthly - 800 TK')">📅 Monthly - 800 TK</li>
+  </ul>
+
+  <div class="form-section">
+    <h3>ফর্ম পূরণ করুন</h3>
+    <select id="paymentMethod">
+      <option value="বিকাশ">বিকাশ</option>
+      <option value="নগদ">নগদ</option>
+    </select>
+    <input id="paymentNumber" placeholder="পেমেন্ট নাম্বার দিন" required />
+    <input id="verificationId" placeholder="ভেরিফিকেশন আইডি দিন" required />
+    <input id="uid" placeholder="UID দিন" required />
+    <button onclick="submitPayment()">✅ কনফার্ম ✅</button>
+  </div>
+
+  <a href="https://youtu.be/EDq1vMj3p6E?si=PeGBuVOQ_eJQ2LJE">📱 টপ আপ ভিডিও</a>
+  <a href="https://youtube.com/@sniper_king_munna100?si=xLMv0wCIBv__vOzl">🔰 ইউটিউব চ্যানেল</a>
+
+  <script>
+    let selectedRate = '';
+    function selectRate(el, rate) {
+      selectedRate = rate;
+      alert("নির্বাচিত: " + rate);
+    }
+    function submitPayment() {
+      if (!selectedRate) return alert("একটি রেট বাছাই করুন");
+      let method = document.getElementById("paymentMethod").value;
+      let number = document.getElementById("paymentNumber").value;
+      let id = document.getElementById("verificationId").value;
+      let uid = document.getElementById("uid").value;
+
+      let msg = `💸মেথড: ${method}\n📱নাম্বার: ${number}\n🧾ভেরিফিকেশন আইডি: ${id}\n🆔UID: ${uid}\n💎প্যাক: ${selectedRate}`;
+      window.location.href = `https://wa.me/8801604677795?text=${encodeURIComponent(msg)}`;
+    }
+  </script>
+</body>
+</html>
